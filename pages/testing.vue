@@ -6,6 +6,19 @@
         <span>Your route should be /testing.</span>
       </div>
     </div>
+
+    <!-- Testing row. -->
+    <div class="row">
+      <div class="col">
+        <ShopItem
+          :id="1"
+          :item-quantity="25"
+          item-name="Test Item"
+          item-description="This is a testing item. It doesn't exist!"
+          item-type="Developer Items"
+        />
+      </div>
+    </div>
   </div>
 </template>
 
