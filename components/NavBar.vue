@@ -1,13 +1,16 @@
 <template>
   <div>
     <b-navbar toggleable="lg" type="dark" variant="info">
-      <b-navbar-brand href="#">NavBar</b-navbar-brand>
+      <b-navbar-brand>
+        <NuxtLink to="/">Home</NuxtLink>
+      </b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item href="#">Link</b-nav-item>
+          <NuxtLink to="/marketplace">Marketplace</NuxtLink>
+          <NuxtLink to="/testing">Testing</NuxtLink>
           <b-nav-item href="#" disabled>Disabled</b-nav-item>
         </b-navbar-nav>
 
@@ -44,6 +47,9 @@
     </b-navbar>
   </div>
 </template>
+
+<style scoped>
+</style>
 
 <script>
 export default {
