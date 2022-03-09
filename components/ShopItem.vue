@@ -4,7 +4,7 @@
       :title="this.itemName"
       :sub-title="this.itemQuantityFormatted"
       :footer="this.itemTypeFormatted"
-      img-src="https://picsum.photos/600/300/?image=25"
+      img-src="http://placekitten.com/600/300"
       img-alt="Image"
       img-top
       tag="article"
