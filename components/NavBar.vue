@@ -1,16 +1,18 @@
 <template>
   <div>
     <b-navbar toggleable="lg" type="dark" variant="info">
-      <b-navbar-brand>
-        <NuxtLink to="/">Home</NuxtLink>
-      </b-navbar-brand>
+      <b-navbar-brand to="/">Home</b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <NuxtLink to="/marketplace">Marketplace</NuxtLink>
-          <NuxtLink to="/testing">Testing</NuxtLink>
+          <b-nav-item to="/marketplace/" exact exact-active-class="active"
+            >Marketplace</b-nav-item
+          >
+          <b-nav-item to="/testing/" exact exact-active-class="active"
+            >Testing</b-nav-item
+          >
           <b-nav-item href="#" disabled>Disabled</b-nav-item>
         </b-navbar-nav>
 

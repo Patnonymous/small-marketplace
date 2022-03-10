@@ -18,6 +18,11 @@
           item-type="Developer Items"
         />
       </div>
+
+      <!-- API Ping Button -->
+      <div class="col">
+        <b-button>Ping the API (response in console)</b-button>
+      </div>
     </div>
   </div>
 </template>
