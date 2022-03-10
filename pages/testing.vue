@@ -21,7 +21,7 @@
 
       <!-- API Ping Button -->
       <div class="col">
-        <b-button>Ping the API (response in console)</b-button>
+        <b-button @click="pingApi">Ping the API (response in console)</b-button>
       </div>
     </div>
   </div>
@@ -43,6 +43,23 @@ export default Vue.extend({
         content: "Testing page.",
       },
     ],
+  },
+  methods: {
+    pingApi: function () {
+      const TAG: string = "pingApi(), ";
+      console.log(TAG + "Pinging using axios.");
+
+      this.$axios
+        .$get("/")
+        .then(function (response) {
+          // handle success
+          console.log(response);
+        })
+        .catch(function (error) {
+          // handle error
+          console.log(error);
+        });
+    },
   },
 });
 </script>
