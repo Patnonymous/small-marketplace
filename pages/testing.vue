@@ -19,9 +19,22 @@
         />
       </div>
 
-      <!-- API Ping Button -->
+      <!-- API Ping Buttons -->
       <div class="col">
-        <b-button @click="pingApi">Ping the API (response in console)</b-button>
+        <div class="row">
+          <div class="col">
+            <b-form-input
+              v-model="testApiRoute"
+              placeholder="Enter the route to test."
+            ></b-form-input>
+          </div>
+
+          <div class="col-auto">
+            <b-button @click="pingApiRoute"
+              >Ping the route. (Response in console.)</b-button
+            >
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -32,7 +45,9 @@ import Vue from "vue";
 
 export default Vue.extend({
   data() {
-    return {};
+    return {
+      testApiRoute: "",
+    };
   },
   head: {
     title: "Testing",
@@ -45,19 +60,19 @@ export default Vue.extend({
     ],
   },
   methods: {
-    pingApi: function () {
-      const TAG: string = "pingApi(), ";
-      console.log(TAG + "Pinging using axios.");
+    pingApiRoute: function () {
+      const TAG: string = "pingApiRoute(), ";
+      console.log(`${TAG} Pinging the following route: ${this.testApiRoute}`);
 
       this.$axios
-        .$get("/")
+        .$get(this.testApiRoute)
         .then(function (response) {
-          // handle success
+          console.log("Success.");
           console.log(response);
         })
         .catch(function (error) {
-          // handle error
-          console.log(error);
+          console.log("Failure.");
+          console.error(error);
         });
     },
   },
