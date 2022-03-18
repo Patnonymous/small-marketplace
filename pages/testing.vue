@@ -3,7 +3,10 @@
     <div class="row justify-content-center">
       <div class="col-auto text-center">
         <h1>This is a testing page.</h1>
-        <span>Your route should be /testing.</span>
+        <span
+          >Your route should be /testing. For relevant API endpoints see
+          market-api code. API testers like Postman also work.
+        </span>
       </div>
     </div>
 
