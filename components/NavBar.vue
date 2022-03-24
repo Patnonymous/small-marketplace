@@ -18,7 +18,14 @@
 
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
-          <b-nav-item-dropdown right>
+          <b-nav-item
+            v-if="$store.state.user.authenticated === false"
+            to="/register/"
+            exact-active-class="active"
+            right
+            >Register New Account</b-nav-item
+          >
+          <b-nav-item-dropdown v-else right>
             <!-- Using 'button-content' slot -->
             <template #button-content>
               <em>User</em>

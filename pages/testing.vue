@@ -40,6 +40,24 @@
         </div>
       </div>
     </div>
+
+    <div class="row">
+      <div class="col">
+        <h3>Authenticated Status: {{ $store.state.user.authenticated }}</h3>
+      </div>
+      <div class="col">
+        <div class="row">
+          <div class="col">
+            <h3>id: {{ $store.state.user.details.id }}</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h3>username: {{ $store.state.user.details.username }}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
