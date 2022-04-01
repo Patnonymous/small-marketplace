@@ -141,6 +141,25 @@ export default Vue.extend({
           "Password error. Password must be between 0 and 255 characters.";
       } else if (!this.confirmPasswordValidation) {
         this.formError = "Password error. The passwords must match.";
+      } else {
+        // All entries are good on the frontend. Proceed.
+        console.log("All user form data is good. Outputting to the console.");
+        console.log(this.form);
+
+        this.$axios
+          .$post("/users/", {
+            email: this.form.email.trim(),
+            username: this.form.username.trim(),
+            password: this.form.password.trim(),
+          })
+          .then(function (response) {
+            console.log("response: ");
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log("error: ");
+            console.log(error);
+          });
       }
     },
     onReset: function (event: Event) {
