@@ -125,6 +125,7 @@ export default Vue.extend({
   methods: {
     onSubmit: function (event: Event) {
       event.preventDefault();
+      const SELF = this;
       const TAG = "\nonSubmit(), ";
       console.log(TAG + "Submitting.");
 
@@ -157,8 +158,16 @@ export default Vue.extend({
             console.log(response);
           })
           .catch(function (error) {
-            console.log("error: ");
-            console.log(error);
+            if (error.response.data.errorMessage) {
+              console.log("Known error with error message: ");
+              console.log(error.response);
+              SELF.formError = error.response.data.errorMessage;
+            } else {
+              console.log("Unknown error: ");
+              console.log(error);
+              SELF.formError =
+                "An error has occurred when attempting to register.";
+            }
           });
       }
     },
